@@ -27,20 +27,6 @@ public class FlightController {
 	@Autowired
 	private FlightService flightService;
 	
-//	@Autowired
-//	RestTemplate restTemplate;
-//	
-//	@Bean
-//	public RestTemplate rest() {
-//		return new RestTemplate();
-//	}
-//	
-//	@GetMapping(value="/airport")
-//	public String getAirport() throws Exception {
-//		String path = Setting.airportUrl;
-//		return restTemplate.getForEntity(path, String.class).getBody();
-//	}
-	
 	@PostMapping(value="/add")
 	public FlightModel addFlightSubmit(@RequestBody FlightModel flight) {
 		return flightService.addFlight(flight);

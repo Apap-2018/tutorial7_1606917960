@@ -46,7 +46,7 @@ public class PilotController {
 	
 	@GetMapping(value="/full/{licenseNumber}")
 	public PilotDetail postStatus(@PathVariable("licenseNumber") String licenseNumber) throws Exception {
-		String path = Setting.pilotUrl + "/pilot";
+		String path = Setting.pilotUrl +	 "/pilot";
 		PilotModel pilot = pilotService.getPilotDetailByLicenseNumber(licenseNumber);
 		PilotDetail detail = restTemplate.postForObject(path, pilot, PilotDetail.class);
 		return detail;
